@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <!-- Copied navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <!-- index route here -->
+        <a class="navbar-brand" href="{{ path('home') }}">Symtest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                                              <!-- welcome route + param here -->
+                    <a class="nav-link" href="{{ path('welcome', {name: 'Ronnie'}) }}">Greet Ronnie</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- End copied navbar -->
+
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>
